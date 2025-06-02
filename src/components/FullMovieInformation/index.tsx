@@ -9,7 +9,7 @@ const FullMovieInformation = ({ selectedID }: ISelectedId) => {
 
     useEffect(() => {
         async function getMovieDetails() {
-            let fetchCall = await fetch(`http://www.omdbapi.com/?apikey=958330a6&i=${selectedID}`);
+            let fetchCall = await fetch(`https://www.omdbapi.com/?apikey=958330a6&i=${selectedID}`);
             let result = await fetchCall.json();
 
             const movieData: IFullMovieData = {

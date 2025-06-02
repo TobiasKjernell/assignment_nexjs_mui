@@ -15,7 +15,7 @@ export function useMovies(query: string) {
             try {
                 setIsLoading(true);
                 setError("");
-                let fetchCall: Response = await fetch(`http://www.omdbapi.com/?apikey=${KEY}&s=${query}`, { signal: controller.signal });
+                let fetchCall: Response = await fetch(`https://www.omdbapi.com/?apikey=${KEY}&s=${query}`, { signal: controller.signal });
                 if (!fetchCall.ok) throw new Error('Something went wrong with fetching movies')
                 let result = await fetchCall.json();
                 if (result.Response === "False") throw new Error(result.Error);
